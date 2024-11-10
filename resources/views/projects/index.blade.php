@@ -44,7 +44,10 @@
                         <tr>
                             <th scope="row"> {{ $project->id }} </th>
                             <td>
-                                <img src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->title }}" style="width: 250px">
+                                @if (isset($project->image))
+                                    <img src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->title }}" style="width: 250px">                               
+                                @endif
+                                {{-- <img src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->title }}" style="width: 250px"> --}}
                             </td>
                             <td> {{ $project->title }} </td>
                             <td> {{ $project->author }} </td>
