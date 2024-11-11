@@ -14,13 +14,14 @@ class ProjectController extends Controller
     {
         $projects = Project::all();
 
-        $projects = Project::paginate(3);
-        return response()->json([
-            'image' => $projects['image'],
-            'title' => $projects['title'],
-            'author' => $projects['author'],
-            'date_create' => $projects['date_create'],
-            'description' => $projects['description'],
-        ]);
+        // $projects = Project::paginate(3);
+        // return response()->json([
+        //     'image' => $projects['image'],
+        //     'title' => $projects['title'],
+        //     'author' => $projects['author'],
+        //     'date_create' => $projects['date_create'],
+        //     'description' => $projects['description'],
+        // ]);
+        return response()->json($projects);
     }
 }
